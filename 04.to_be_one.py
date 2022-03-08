@@ -8,6 +8,7 @@
 # 배수가 되면 2번 전략 사용한다.
 
 count, K, the_number = 0, 5, 25
+
 while True:
     if the_number >= K and the_number % K == 0:
         if K == 1:

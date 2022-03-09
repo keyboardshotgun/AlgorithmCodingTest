@@ -22,13 +22,13 @@ map_list = [
 ]
 
 start_point = [0, 0]
-order_map = ['R', 'R', 'R', 'L', 'D', 'D', 'D', 'D', 'D']
+order_map = ['R', 'R', 'R', 'R', 'R', 'R', 'L', 'D', 'D', 'D', 'D', 'D']
 
 
 def dest(start, order):
     move_y, move_x = start
-    max_x = len(map_list[0])-1
-    max_y = len(map_list)-1
+    max_x = len(map_list[0]) - 1
+    max_y = len(map_list) - 1
 
     print(max_x, max_y)
 
@@ -37,6 +37,8 @@ def dest(start, order):
             if move_y < max_y:
                 move_y += 1
                 print('moved R', move_y)
+            else:
+                print('out R')
         elif o == 'D':  # x의 증가
             if move_x < max_x:
                 move_x += 1

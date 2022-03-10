@@ -32,7 +32,7 @@ def dest(start, order):
 
     print(max_x, max_y)
 
-    for o in order_map:
+    for o in order:
         if o == 'R':  # y의 증가
             if move_y < max_y:
                 move_y += 1

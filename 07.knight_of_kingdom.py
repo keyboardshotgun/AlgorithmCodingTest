@@ -16,12 +16,12 @@
 # if x + 3 <= 7 and y + 3 <= 7:
 # if x + 1 <= 7 and y - 3 >= 0:
 # if x + 1 <= 7 and y + 3 <= 7:
-# 생각하지 못한 포인트가 있는듯. 6, 6 -> 6개 아닌가?
+
+# 결론. 문제를 잘 읽자.
+# 1~2번 연속 이동 후의 경우의 수가 아니라 두가지 전략 중 각각 이동 할 수 있는 모든 전략 이다.
 
 # 시작점
-start_position = '6,6'
-start_x = 0
-start_y = 0
+start_position = '2,2'
 
 # 맵의 생성
 map_list = []
@@ -34,6 +34,9 @@ for x in range(1, 9):
 
 def movement_of_knight():
     count = 0  # 이동 가능 경우의 수
+    this_x = 0
+    this_y = 0
+
     for k in range(8):  # string으로 된 시작점의 배열 인덱스 구하기
         if start_position in map_list[k]:
             print('array index :', k, map_list[k].index(start_position))

@@ -115,4 +115,5 @@ def new_path_of_knight(start_p):
 
 
 print('new_result :', new_path_of_knight(new_start_position))
-# 새로운변수 = 처음값 + 이동값 생각을 왜 못했을까? ㅎ
+# 새로운변수 = 처음값 + 이동값...
+# 반성좀하자. 한번더 생각하고 두드리자.

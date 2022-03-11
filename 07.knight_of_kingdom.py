@@ -17,11 +17,8 @@
 # if x + 1 <= 7 and y - 3 >= 0:
 # if x + 1 <= 7 and y + 3 <= 7:
 
-# 결론. 문제를 잘 읽자.
-# 1~2번 연속 이동 후의 경우의 수가 아니라 두가지 전략 중 각각 이동 할 수 있는 모든 전략 이다.
-
 # 시작점
-start_position = '2,2'
+start_position = '3,3'
 
 # 맵의 생성
 map_list = []
@@ -65,8 +62,7 @@ def movement_of_knight():
 print('start_position : ', start_position)
 print('my_results : ', movement_of_knight())
 
-
-#검증
+# 검증
 row = int(start_position.split(',')[0])
 column = int(start_position.split(',')[1])
 # 8가지 방향에 대하여 각 위치로 이동이 가능한지 확인
@@ -83,4 +79,40 @@ for step in steps:
     if next_row >= 1 and next_row <= 8 and next_column >= 1 and next_column <= 8:
         result += 1
 
-print('his_result : ', result);
+print('his_result : ', result)
+
+# 결론. 문제를 잘 읽자.
+# 1~2번 연속 이동 후의 경우의 수가 아니라 두가지 전략 중 각각 이동 할 수 있는 모든 전략 이다.
+# 4,4 시작일때, 움직일 수 있는 경우의 수
+#     [2,3]   [2,5]
+# [3, 2]          [3,6]
+#         [4,4]
+# [5,2]           [5,6]
+#     [6,3]   [6,5]
+
+new_start_position = (3, 3)
+knight_path_array = [(-2, -1), (-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2)]
+
+
+def new_path_of_knight(start_p):
+    new_count = 0
+    start_x = start_p[0]
+    start_y = start_p[1]
+
+    for path in range(len(knight_path_array)):
+        start_x += knight_path_array[path][0]
+        start_y += knight_path_array[path][1]
+        print('Order : ', knight_path_array[path][0], ',', knight_path_array[path][1])
+        print('Move : ', start_x, ',', start_y)
+
+        if (1 <= start_x <= 8) and (1 <= start_y <= 8):
+            new_count += 1
+
+        start_x = start_p[0]
+        start_y = start_p[1]
+        print('reset : ', start_x, ',', start_y, '\n')
+    return new_count
+
+
+print('new_result :', new_path_of_knight(new_start_position))
+# 새로운변수 = 처음값 + 이동값 생각을 왜 못했을까? ㅎ

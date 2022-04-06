@@ -94,8 +94,13 @@ print('\n------------------')
 # 방문한 포인트에서 갈수 있는 인접 노드를 전부 큐에 넣고 + 방문처리
 # 순서대로 큐에서 꺼내서 해당 노드에서 방문한 적이 없는 노드를 큐에 넣는다.
 
-bfs_visited = [False] * len(graph)
+# 7 -> [6, 8] -> 둘중 작은 노드 6에 방문
+# 6 -> [7] -> 6을 꺼내고 하고, 이전 노드(7)로 이동
+# 7 -> [8] -> 8을 방문 한다.
+# 8 -> [1]
+# 종단(8,1)에서 연결되는 노드가 없다면? -> 그냥 끝인가?
 
+bfs_visited = [False] * len(graph)
 
 # 0 -> 1                    = [(True), (True), false , false , false ,false ,false  ,false  ,false]
 # 1 -> (2, 3, 8, 추가)       = [false , True  , (True), (True), false ,false ,false  ,false  ,(True)]

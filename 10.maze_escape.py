@@ -69,3 +69,5 @@ def bfs(s_point, maze_prison):
 start_point = (0, 0)
 result = bfs(start_point, amaze_prison)
 print('result : ' + str(result))
+
+# 방문지역 저장을 따로 만드는 것보다. 0이면 넘기는 것으로 처리 하는 것이 프로그램적으로 넘기는 것이 효율적인가?

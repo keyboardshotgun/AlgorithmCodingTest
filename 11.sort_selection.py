@@ -29,3 +29,8 @@ test_arr.sort(reverse=True)
 end_time = time.time()
 print(test_arr)
 print(end_time - start_time)
+
+# range 함수의 특성을 잊어 버리지 말자. range(s, e) -> e는 포함되지 않는다.
+# range(10) === range(0, 10) => 0 ~ 9
+# for i in range(10):
+#     print(i)

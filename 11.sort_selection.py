@@ -30,7 +30,7 @@ end_time = time.time()
 print(test_arr)
 print(end_time - start_time)
 
-# range 함수의 특성을 잊어 버리지 말자. range(s, e) -> e는 포함되지 않는다.
+# 후기
+# 기존습성에 너무 익숙해져 있는 듯. j+1 이 index 오류가 발생할 것이라 판단...파이썬은 다르다.
+# range 함수의 특성 기억하자. range(s, e) -> e는 포함되지 않는다.
 # range(10) === range(0, 10) => 0 ~ 9
-# for i in range(10):
-#     print(i)
